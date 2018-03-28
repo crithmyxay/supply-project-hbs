@@ -1,0 +1,59 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  
+  .loginContainer {
+    text-align: left;
+  }
+
+  input {
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  span {
+    font-size: 20px;
+  }
+
+  .inputBox {
+    display: grid;
+    grid-row: 1fr 2fr;
+  }
+
+  .submit {
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    background: #228747;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  a {
+    text-decoration: none;
+    color: #228747;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+}

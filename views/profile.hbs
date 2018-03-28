@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login App</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <button class="submit">Logout</button>
+    <form action="/users/update" method="PUT">
+      <label for="">First Name</label>
+      <input class="inputBox" type="text" name="firstname" value="{{firstname}}"/>
+      <label for="">Last Name</label>
+      <input class="inputBox" type="text" name="lastname" value="{{lastname}}"/>
+      <label for="">Phone Number</label>
+      <input class="inputBox" type="text" name="number" value="{{number}}"/>
+      <button class="submit" type="submit" value="Submit">Update</button>
+    </form>
+  </body>
+</html>

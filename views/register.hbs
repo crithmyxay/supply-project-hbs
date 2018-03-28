@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login App</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form action="/users/register" method="POST">
+      <label for="">First Name</label>
+      <input class="inputBox" type="text" name="firstname"/>
+      <label for="">Last Name</label>
+      <input class="inputBox" type="text" name="lastname"/>
+      <label for="">Phone Number</label>
+      <input class="inputBox" type="text" name="number"/>
+      <label for="">Email</label>
+      <input class="inputBox" type="text" name="email"/>
+      <label for="">Confirm Email</label>
+      <input class="inputBox" type="text" name="confirmEmail"/>
+      <label for="">Password</label>
+      <input class="inputBox" type="password" name="password"/>
+      <label for="">Confirm Password</label>
+      <input class="inputBox" type="password" name="confirmPassword"/>
+      <span>{{errors}}</span>
+      <button class="submit" type="submit" value="Submit">Submit</button>
+    </form>
+  </body>
+</html>
