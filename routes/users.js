@@ -117,12 +117,15 @@ passport.deserializeUser((id, done) => {
   });
 });
 
-successRedirect:'/profile', 
+// successRedirect:'/profile', 
   
 router.post('/login', 
   passport.authenticate('local', {successRedirect:'/profile', 
-                                  failureRedirect:'http://google.com', 
-                                  failureFlash: true})
+                                  failureRedirect:'/', 
+                                  failureFlash: true}),
+                                  (req, res) => {
+                                    console.log('user is logged in');
+                                  }
                                 );
 
 

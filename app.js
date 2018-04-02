@@ -19,6 +19,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
 // app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -41,6 +42,10 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Routes
+app.use('/users', usersRouter);
+app.use('/', indexRouter);
+
 // Express Validator
 app.use(expressValidator({
   errorFormatter: function(param, msg, value) {
@@ -58,10 +63,6 @@ app.use(expressValidator({
     };
   }
 }));
-
-// Routes
-app.use('/users', usersRouter);
-app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
