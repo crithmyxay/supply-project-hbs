@@ -5,14 +5,14 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <button class="submit">Logout</button>
-    <form action="/users/update" method="PUT">
+    <a href="/logout"><button class="submit">Logout</button></a>
+    <form action="/update" method="post">
       <label for="">First Name</label>
-      <input class="inputBox" type="text" name="firstname" value="{{firstname}}"/>
+      <textarea class="inputBox" type="text" name="firstname" placeholder="{{firstname}}">{{firstname}}</textarea>
       <label for="">Last Name</label>
-      <input class="inputBox" type="text" name="lastname" value="{{lastname}}"/>
+      <textarea class="inputBox" type="text" name="lastname" placeholder="{{lastname}}">{{lastname}}</textarea>
       <label for="">Phone Number</label>
-      <input class="inputBox" type="text" name="number" value="{{number}}"/>
+      <textarea class="inputBox" type="text" name="number" placeholder="{{number}}">{{number}}</textarea>
       <button class="submit" type="submit" value="Submit">Update</button>
     </form>
   </body>

@@ -5,16 +5,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <form action="/users/login" method="POST">
-      <label for="">Email</label>
+    <form action="/login" method="get">
+      <label for="login">Index</label><br>
+      <label for="email">Email</label>
       <input class="inputBox" type="text" name="email"/>
-      <label for="">Password</label>
+      <label for="password">Password</label>
       <input class="inputBox" type="password" name="password"/>
-      <button class="submit" type="submit" value="Log In">Login</button>
+      <button class="submit" type="submit" value="Login">Login</button>
     </form>
     <div>
       <span>Not a User? </span>
-      <a href='/users/signup'>Register Now!</a>
+      <a href='/signup'>Register Now!</a>
     </div>
   </body>
 </html>
