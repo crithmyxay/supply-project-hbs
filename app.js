@@ -8,7 +8,9 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const flash = require('connect-flash');
-var expressValidator = require('express-validator');
+const expressValidator = require('express-validator');
+const setupAuth = require('./auth')
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -19,32 +21,14 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// Setting up auth
+setupAuth(app);
 
 // app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')))
-
-// Authentication Middleware
-
-// Express Session
-app.use (session({
-  secret: 'whatever',
-  resave: true,
-  saveUninitialized: true
-}));
-
-//Flash
-app.use(flash());
-
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
-
-// Routes
-app.use('/users', usersRouter);
-app.use('/', indexRouter);
 
 // Express Validator
 app.use(expressValidator({
@@ -63,6 +47,10 @@ app.use(expressValidator({
     };
   }
 }));
+
+// Routes
+app.use(indexRouter);
+app.use(usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

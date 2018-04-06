@@ -5,18 +5,15 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <form action="/users/login" method="POST">
-      <label for="">Email</label>
-      <input class="inputBox" type="text" name="email"/>
-      <label for="">Password</label>
-      <input class="inputBox" type="password" name="password"/>
-      {{!-- <div class="right"> --}}
-        <input class="submit" type="submit" value="Login" method="POST" />
-      {{!-- </div> --}}
+    <a href="/logout"><button class="submit">Logout</button></a>
+    <form action="/update" method="post">
+      <label for="">First Name</label>
+      <input class="inputBox" type="text" name="firstname" placeholder="{{firstname}}"/>
+      <label for="">Last Name</label>
+      <input class="inputBox" type="text" name="lastname" placeholder="{{lastname}}"/>
+      <label for="">Phone Number</label>
+      <input class="inputBox" type="text" name="number" placeholder="{{number}}"/>
+      <button class="submit" type="submit" value="Submit">Update</button>
     </form>
-    <div>
-      <span>Not a User? </span>
-      <a href='http://localhost:3000/users/signup'>Register Now!</a>
-    </div>
   </body>
 </html>
